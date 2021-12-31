@@ -22,6 +22,10 @@ body {
   gap: 5px;
 }
 
+.calculator-grid button {
+  cursor: pointer;
+}
+
 #clear {
   grid-column: 1 / 3;
   grid-row: 2;
@@ -75,7 +79,7 @@ body {
   grid-row: 3;
 }
 
-#display {
+.display-grid {
   grid-row: 1;
   grid-column: 1 / end;
   background-color: rgb(66, 64, 83);
