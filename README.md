@@ -1,4 +1,4 @@
-#  Creating a Calculator using React.jso
+#  Creating a Calculator using React.js
 
 You can check out the design in CodePen by clicking this [Link](https://codepen.io/mohanadoo/full/QWqvKmb)
 
