@@ -1,3 +1,13 @@
+#  Creating a Calculator using React.jso
+
+You can check out the design in CodePen by clicking this [Link](https://codepen.io/mohanadoo/full/QWqvKmb)
+
+And here is a collection of other small React projects I did 👇 
+
+[Collection](https://codepen.io/collection/aMewgw)
+
+--- 
+
 # Nano React App Default Javascript Template
 
 The default template project for [nano-react-app](https://github.com/nano-react-app/nano-react-app).
