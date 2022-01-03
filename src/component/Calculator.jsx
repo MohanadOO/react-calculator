@@ -1,6 +1,17 @@
 import './Calculator.css'
+import './Display.css'
 import React from 'react'
 import numberOfOperatorTest from './Regex.jsx'
+import beforeEqual from './beforeEqual'
+
+const Display = (props) => {
+  return (
+    <div className="display-grid">
+      <p id="input">{props.input}</p>
+      <div id="display">{props.output}</div>
+    </div>
+  )
+}
 
 class Calculator extends React.Component {
   constructor(props){
@@ -105,21 +116,18 @@ handleOperator(operator){
   }
 
   let input = this.state.input + ' ' + operator.target.value + ' ';
-  console.log(input)
-  // FIXME:  
+ 
   if(numberOfOperatorTest.test(input) === true){
-    if (this.state.input == Number){
-
-    }
-    else {
-      console.log('True')
-      console.log(input.match(numberOfOperatorTest))
-      this.state.operatorArr.splice(this.state.operatorArr.length - 2 , 1)
-      console.log(this.state.operatorArr)
-    }
+    console.error('TRUE ?')
+    
+    console.log(this.state.operatorArr)
+     for (let i = 0; i < this.state.operatorArr.length; i++){
+       this.state.operatorArr.splice(this.state.operatorArr.length - 2 , 1)
+     }
+    
   }
 
-    //When entering the (-) operator after an operator (+*/-) the output will be empty and this IF statement will trigger to change the overall result at the end by Making the result negative
+    //When entering the (-) operator after an operator (+*/-) the output will be empty and this IF statement will trigger to change the overall result at the end by Making the result negative.
     if (this.state.output === ''){
       this.state.negativeResult = true;
     }
@@ -180,20 +188,19 @@ handleOperator(operator){
             this.state.result = this.state.numberArr[0] / this.state.numberArr[1]
           }
 
+          console.log(this.state.result , this.state.operatorArr, this.state.numberArr)
           this.state.numberArr.shift()
           this.state.numberArr.shift()
           this.state.operatorArr.shift()
           this.state.numberArr.unshift(this.state.result)  
         }
         
-      
         this.setState({
           output: this.state.result,
           input: this.state.input + ' ' + '=' + ' ' + this.state.result,
         })
-        
         // This IF statement is to check if there is an equal sign (=) immediately after an operator sign (+-/*)
-        if(numberOfOperatorTest.test(checkInput) === true){
+        if(beforeEqual.test(checkInput) === true){
           this.setState({
             input:  0,
             output: 0,
@@ -209,15 +216,13 @@ handleOperator(operator){
         }
       }
 
+
   render() {
     return (
       <div>
         <div className="calculator-grid">
-          <div className="display-grid">
-            <p id="input">{this.state.input}</p>
-            <div id="display">{this.state.output}</div>
-          </div>
-
+          <Display input = {this.state.input} output = {this.state.output} />
+          
           <button id="equals" onClick={this.handleResult} value={"="}>
             =
           </button>

@@ -1,0 +1,21 @@
+.display-grid {
+    grid-row: 1;
+    grid-column: 1 / end;
+    background-color: rgb(66, 64, 83);
+    color: white;
+    text-align: right;
+    padding: 0.3em 0.7em;
+    word-break: break-all;
+    border-radius: 5px;
+    transform: translateX(-3px);
+  }
+  
+  .input,
+  .output {
+    font-family: Inconsolata, sans-serif;
+  }
+  
+  .output {
+    font-size: 1.4rem;
+    color: magenta;
+  }
