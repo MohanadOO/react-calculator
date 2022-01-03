@@ -1,8 +1,8 @@
 import './Calculator.css'
 import './Display.css'
 import React from 'react'
-import numberOfOperatorTest from './Regex.jsx'
-import beforeEqual from './beforeEqual'
+import {numberOfOperatorTest} from './Regex.jsx'
+import {beforeEqual} from './beforeEqual'
 
 const Display = (props) => {
   return (
@@ -283,4 +283,4 @@ handleOperator(operator){
   }
 }
 
-export default Calculator
+export {Calculator}
